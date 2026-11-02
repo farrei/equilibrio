@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#06133a">
+<meta name="description" content="Equilíbrio: o celular é a bandeja. Mantenha a gota no centro.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Equilíbrio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud" class="hidden">
+  <div class="hud-l"><span class="lbl">Pontos</span><span id="score">0</span></div>
+  <div id="mult" class="mult">×1</div>
+  <div class="hud-r"><span class="lbl" id="hudRLbl">Recorde</span><span id="hudR">0</span></div>
+</div>
+<button id="mute" aria-label="Som">🔊</button>
+<div id="pass" class="hidden"><div class="pass-t">Passe para o próximo!</div><div id="passN" class="pass-n">3</div></div>
+
+<section id="menu" class="screen">
+  <div class="logo"><div class="drop-ico"></div><h1>Equilíbrio</h1></div>
+  <p class="tag">O seu celular é a bandeja.<br>Incline para manter a gota no centro.</p>
+  <div class="modes">
+    <button class="mode sel" data-mode="solo"><b>Solo</b><small>Quanto tempo você aguenta?</small></button>
+    <button class="mode" data-mode="pass"><b>Passa a Bandeja</b><small>Passe o celular de mão em mão</small></button>
+  </div>
+  <button id="start" class="cta">Começar</button>
+  <p class="best">Recorde: <b id="bestMenu">0</b></p>
+  <p id="hint" class="hint"></p>
+</section>
+
+<section id="over" class="screen hidden">
+  <h2>A gota caiu!</h2>
+  <div class="big" id="finalScore">0</div>
+  <p id="finalInfo" class="info"></p>
+  <p id="newBest" class="newbest hidden">Novo recorde!</p>
+  <button id="again" class="cta">Jogar de novo</button>
+  <button id="toMenu" class="ghost">Menu</button>
+</section>
+<script src="game.js"></script>
+</body>
+</html>
